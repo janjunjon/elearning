@@ -1,0 +1,49 @@
+yum -y upgrade && yum -y update && \
+yum -y install gcc gcc-c++ openssl-devel readline-devel zlib-devel bzip2 make && \
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash && \
+command -v nvm && \
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv && \
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile && \
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile && \
+source ~/.bash_profile && \
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build && \
+rbenv install 2.7.0 && rbenv global 2.7.0 && \
+gem install multi_json -v '1.10.1' && \
+rbenv exec gem install bundler && \
+rbenv rehash && \
+gem install rails && \
+nvm install v14.16.1 && \
+nvm alias default v14.16.1 && \
+npm install --global yarn && \
+cd && mkdir rep
+
+echo $PATH
+/root/.nvm/versions/node/v14.16.1/bin:
+/root/.rbenv/shims:
+/root/.rbenv/bin:
+/root/.rbenv/shims:
+/root/.rbenv/bin:
+/opt/ansible/ansible/bin:
+/bin:
+/usr/bin:
+/sbin:
+/usr/sbin:
+/root/bin:
+/root/bin:
+/root/bin
+
+.bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

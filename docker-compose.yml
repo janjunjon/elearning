@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  app:
+    tty: true
+    image: jjthomson2166/rails-linux
+    volumes:
+      - /home/jjthomson/elearning/rep/:/root/rep/
